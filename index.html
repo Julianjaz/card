@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Boda</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/CAROJULI.jpeg'); /* Fondo verde para toda la pantalla */
+      transition: background 1s ease; /* Añade una transición suave al fondo */
+    }
+
+    #fondo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
+    }
+
+    #bienvenida {
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px; /* Ajusta el margen según tus necesidades */
+      font-family: 'Dancing Script', cursive;
+      opacity: 0; /* Inicialmente oculto */
+      transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
+    }
+
+    #tarjeta {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none; /* Inicialmente oculto */
+      margin: 20px; /* Ajusta el margen según tus necesidades */
+      font-family: 'Scriptina', cursive;
+      opacity: 0; /* Inicialmente oculto */
+      transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
+    }
+
+    #foto2 {
+
+      width: 140px;
+
+    }
+    h1 {
+      color: #333;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    button {
+      background-color: #63b0ee;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    <div id="fondo">
+        <div id="bienvenida">
+            <h1 id="mensaje"> </h1>
+        </div>
+
+        <div id="tarjeta">
+            <h1> C & J</h1>
+            <img src="img/CAROJULI.jpeg" alt="Foto de los Novios">
+            <p>Fecha: 06 de diciembre 2025</p>
+            <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p>
+            <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano">
+            <br>
+            <h2>Lugar</h2>
+            <button onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">Ubicacion</button>
+
+            <br>
+            <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdaHO3hWA4I1mdtDlZlJkaoWlFa_Z-ChpNwqzK5elhEnzpuQA/viewform?usp=sf_link'">Confirmar asistencia</button>
+
+        </div>
+        <!-- Agrega la etiqueta audio para la música -->
+        <audio controls autoplay loop>
+          <source src="media/te_encontre.mp4" type="audio/mp3">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+  <script>
+    // Función para mostrar el mensaje letra por letra
+    function mostrarMensaje() {
+      var mensaje = document.getElementById("mensaje");
+      var texto = "Bienvenidos a nuestra boda: Carolina y Julian";
+      var index = 0;
+
+      function mostrarSiguienteLetra() {
+        mensaje.textContent += texto[index];
+        index++;
+
+        if (index < texto.length) {
+          setTimeout(mostrarSiguienteLetra, 100); // Retardo de 100 milisegundos entre letras
+        }
+      }
+
+      mostrarSiguienteLetra();
+    }
+
+    // Función para mostrar la bienvenida y luego la tarjeta
+    function mostrarBienvenida() {
+      var bienvenida = document.getElementById("bienvenida");
+      var tarjeta = document.getElementById("tarjeta");
+
+      bienvenida.style.opacity = "1"; // Hace visible la bienvenida
+      setTimeout(function() {
+        bienvenida.style.opacity = "0"; // Oculta bienvenida después de 4 segundos
+        tarjeta.style.display = "block"; // Muestra tarjeta después de ocultar bienvenida
+
+        setTimeout(function() {
+          tarjeta.style.opacity = "1"; // Hace visible la tarjeta gradualmente
+        }, 100); // Retardo de 100 milisegundos
+      }, 6000); // 4000 milisegundos = 4 segundos
+
+      // Inicia la animación del mensaje
+      mostrarMensaje();
+    }
+
+    // Función para manejar la reserva
+    // function reservar() {
+    //   var nombre = prompt("Ingresa tus nombres:");
+    //   if (nombre) {
+    //     alert("¡Gracias por reservar, " + nombre + "!");
+    //     // Puedes enviar los datos a tu servidor o base de datos aquí
+    //   }
+    // }
+
+    // Llamar a la función para iniciar el proceso
+    mostrarBienvenida();
+  </script>
+</body>
+</html>
