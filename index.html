@@ -57,6 +57,11 @@
       width: 50%;
 
     }
+
+    #boton-ubicacion{
+      margin-top: 10px;
+    }
+
     h1 {
       color: #333;
     }
@@ -87,6 +92,17 @@
     button:hover {
       background-color: #45a049;
     }
+
+    .countdown {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    }
+
+    .countdown-item {
+        margin: 0 10px;
+        font-size: 2em;
+    }
   </style>
 </head>
 <body>
@@ -96,6 +112,13 @@
         </div>
 
         <div id="tarjeta">
+            <h2> Dias para la boda: </h2>
+            <div class="countdown">
+              <div id="days" class="countdown-item"></div>
+              <div id="hours" class="countdown-item"></div>
+              <div id="minutes" class="countdown-item"></div>
+              <div id="seconds" class="countdown-item"></div>
+            </div>
             <h1> C & J</h1>
             <img src="img/CAROJULI.jpeg" alt="Foto de los Novios">
             <p>Fecha: 06 de diciembre 2025</p>
@@ -104,9 +127,9 @@
             <br>
             <h2>Lugar</h2>
             <p>Palau</p>
-            <button onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">Ubicacion</button>
-
+            <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">Ubicacion</button>
             <br>
+            <h2>Confirma tu asistencia aqui: </h2>
             <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdaHO3hWA4I1mdtDlZlJkaoWlFa_Z-ChpNwqzK5elhEnzpuQA/viewform?usp=sf_link'">Confirmar asistencia</button>
 
         </div>
@@ -155,14 +178,31 @@
       mostrarMensaje();
     }
 
-    // Función para manejar la reserva
-    // function reservar() {
-    //   var nombre = prompt("Ingresa tus nombres:");
-    //   if (nombre) {
-    //     alert("¡Gracias por reservar, " + nombre + "!");
-    //     // Puedes enviar los datos a tu servidor o base de datos aquí
-    //   }
-    // }
+    document.addEventListener('DOMContentLoaded', function () {
+    // Establecer la fecha límite (puedes cambiarla a la fecha que desees)
+    const deadline = new Date('2025-05-03T06:00:00');
+
+    function updateCountdown() {
+        const now = new Date();
+        const timeDifference = deadline - now;
+
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerHTML = days + 'd';
+        document.getElementById('hours').innerHTML = hours + 'h';
+        document.getElementById('minutes').innerHTML = minutes + 'm';
+        document.getElementById('seconds').innerHTML = seconds + 's';
+    }
+
+        // Actualizar la cuenta regresiva cada segundo
+        setInterval(updateCountdown, 1000);
+
+        // Inicializar la cuenta regresiva al cargar la página
+        updateCountdown();
+    });
 
     // Llamar a la función para iniciar el proceso
     mostrarBienvenida();
