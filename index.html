@@ -62,9 +62,9 @@
       margin-top: 0px;
     }
 
-    #inicio{
+    /* #inicio{
       background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/CAROJULI.jpeg'); /* Fondo verde para toda la pantalla */
-    }
+    } */
 
     #asistencia{
       background: linear-gradient(to bottom right, #f5e3e3, #f3c1c1);
@@ -112,14 +112,29 @@
     .countdown-item {
         margin: 0 10px;
         font-size: 2em;
-        border-radius: 10px; /* Bordes redondeados */
-        background-color: #f06464; /* Color de fondo */
+        border-radius: 50%; /* Bordes redondeados */
+        background-color: #92c2ee; /* Color de fondo */
         box-shadow: 0 4px 8px rgba(39, 37, 37, 0.1); /* Sombra */
-        border: 2px solid #701f0a; /* Borde de otro color */
+        border: 2px solid #77b1f3; /* Borde de otro color */
         font-family: "Times New Roman", Times, serif;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
     }
 
+    .fecha{
+      display: flex;
+      justify-content: space-between; /* Alinea los elementos al principio y al final del contenedor */
+      width: 300px; /* Ancho del contenedor */
+      padding: 10px; /* Espaciado interno del contenedor */
+      border: 1px solid #000; /* Borde para visualizar el contenedor */
+    }
 
+    .separador {
+        border-right: 1px solid #000; /* Línea vertical divisoria */
+        margin-right: 10px; /* Espacio entre el separador y el texto */
+    }
 
   </style>
 </head>
@@ -130,6 +145,14 @@
         </div>
 
         <div id="tarjeta">
+          <img src="img/casamos.png" alt="casamos">
+                  <!-- Agrega la etiqueta audio para la música -->
+          <audio id="miAudio" controls loop>
+            <source src="media/te_encontre.mp4" type="audio/mp4">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+          <h1>Estas invitado!</h1>
+          <h3>Queremos que seas parte de nuestra boda</h3>
           <div id="inicio">
             <h2> Dias para la boda: </h2>
             <div class="countdown">
@@ -139,15 +162,22 @@
               <div id="seconds" class="countdown-item"></div>
             </div>
           </div>
-            <h1> C & J</h1>
-            <img src="img/CAROJULI.jpeg" alt="Foto de los Novios">
-            <p>Fecha: 06 de diciembre 2025</p>
-            <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p>
-            <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano">
+            <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
+            <h1>Ceremonia</h1>
+            <h4>Igleasia tatata de tatata</h4>
+            <div class="contenedor-padre"></div>
+            <div class="fecha">
+              <p>Fecha: 06 de diciembre 2025</p>
+              <p class="separador"></p>
+              <p>19:00</p>
+            </div>
+            
+            <!-- <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p> -->
+            <!-- <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano"> -->
             <br>
             <h2>Lugar</h2>
-            <p>Palau</p>
-            <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">Ubicacion</button>
+            <p>Palau calle 1 # 2</p>
+            <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button>
             <br>
             <h2>Dress code</h2>
             <p>total white</p>
@@ -157,11 +187,7 @@
             <button id="boton-ubicacion" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdaHO3hWA4I1mdtDlZlJkaoWlFa_Z-ChpNwqzK5elhEnzpuQA/viewform?usp=sf_link'">Confirmar asistencia</button>
           </div>
         </div>
-        <!-- Agrega la etiqueta audio para la música -->
-        <audio id="miAudio" controls loop>
-          <source src="media/te_encontre.mp4" type="audio/mp4">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
+
     </div>
 
   <script>
