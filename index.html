@@ -60,6 +60,9 @@
 
     #boton-ubicacion{
       margin-top: 0px;
+      width: 130px; /* Ancho del botón */
+      height: 40px; /* Alto del botón */
+      font-size: 10px; /* Tamaño de la fuente del botón */
     }
 
     /* #inicio{
@@ -136,6 +139,16 @@
         margin-right: 10px; /* Espacio entre el separador y el texto */
     }
 
+    .contenedor-padre {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dress-code{
+      padding: 0px;
+      width: 30%;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -147,10 +160,12 @@
         <div id="tarjeta">
           <img src="img/casamos.png" alt="casamos">
                   <!-- Agrega la etiqueta audio para la música -->
+          <br>
           <audio id="miAudio" controls loop>
-            <source src="media/te_encontre.mp4" type="audio/mp4">
+            <source src="media/cancion.mp3" type="audio/mp3">
             Tu navegador no soporta el elemento de audio.
           </audio>
+
           <h1>Estas invitado!</h1>
           <h3>Queremos que seas parte de nuestra boda</h3>
           <div id="inicio">
@@ -165,22 +180,30 @@
             <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
             <h1>Ceremonia</h1>
             <h4>Igleasia tatata de tatata</h4>
-            <div class="contenedor-padre"></div>
+            <div class="contenedor-padre">
             <div class="fecha">
               <p>Fecha: 06 de diciembre 2025</p>
               <p class="separador"></p>
               <p>19:00</p>
             </div>
-            
+          </div>
             <!-- <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p> -->
             <!-- <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano"> -->
             <br>
             <h2>Lugar</h2>
-            <p>Palau calle 1 # 2</p>
-            <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button>
+            <div class="contenedor-padre">
+              <div class="fecha">
+                <p>Palau calle 1 # 2</p>
+                <p class="separador"></p>
+                <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button>
+              </div>
+            </div>
+            <!-- <p>Palau calle 1 # 2</p> -->
+            <!-- <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button> -->
             <br>
             <h2>Dress code</h2>
-            <p>total white</p>
+            <img src="img/dress-code.png" alt="casamos" class="dress-code">
+            <!-- <p>total white</p> -->
             <br>
             <div id="asistencia">
             <h2>Confirma tu asistencia aqui: </h2>
