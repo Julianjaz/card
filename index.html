@@ -60,9 +60,9 @@
 
     #boton-ubicacion{
       margin-top: 0px;
-      width: 130px; /* Ancho del botón */
-      height: 40px; /* Alto del botón */
-      font-size: 10px; /* Tamaño de la fuente del botón */
+      width: 70px; /* Ancho del botón */
+      height: 30px; /* Alto del botón */
+      font-size: 8px; /* Tamaño de la fuente del botón */
     }
 
     /* #inicio{
@@ -70,7 +70,7 @@
     /* } */ 
 
     #asistencia{
-      background: linear-gradient(to bottom right, #f5e3e3, #f3c1c1);
+      background: linear-gradient(to bottom right, #e3f1f5, #c3d9f5);
       border-radius: 10px;
       padding: 20px;
     }
@@ -178,36 +178,41 @@
             </div>
           </div>
             <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
+            <h1>Fecha</h1>
+            <h3>03 de mayo del 2025</h3>
             <h1>Ceremonia</h1>
-            <h4>Igleasia tatata de tatata</h4>
             <div class="contenedor-padre">
             <div class="fecha">
-              <p>Fecha: 06 de diciembre 2025</p>
+              <p>Igleasia tatata de tatata</p>
               <p class="separador"></p>
-              <p>19:00</p>
+              <p>15:00</p>
+              <p class="separador"></p>
+              <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER</button>
             </div>
           </div>
             <!-- <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p> -->
             <!-- <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano"> -->
             <br>
-            <h2>Lugar</h2>
+            <h1>Fiesta</h1>
             <div class="contenedor-padre">
               <div class="fecha">
                 <p>Palau calle 1 # 2</p>
                 <p class="separador"></p>
-                <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button>
+                <p>20:00</p>
+                <p class="separador"></p>
+                <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER</button>
               </div>
             </div>
             <!-- <p>Palau calle 1 # 2</p> -->
             <!-- <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button> -->
             <br>
             <h2>Dress code</h2>
-            <img src="img/dress-code.png" alt="casamos" class="dress-code">
+            <img src="img/dress-code2.png" alt="casamos" class="dress-code">
             <!-- <p>total white</p> -->
             <br>
             <div id="asistencia">
             <h2>Confirma tu asistencia aqui: </h2>
-            <button id="boton-ubicacion" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdaHO3hWA4I1mdtDlZlJkaoWlFa_Z-ChpNwqzK5elhEnzpuQA/viewform?usp=sf_link'">Confirmar asistencia</button>
+            <button id="boton-ubicacion" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdaHO3hWA4I1mdtDlZlJkaoWlFa_Z-ChpNwqzK5elhEnzpuQA/viewform?usp=sf_link'">Confirmar</button>
           </div>
         </div>
 
@@ -217,7 +222,7 @@
     // Función para mostrar el mensaje letra por letra
     function mostrarMensaje() {
       var mensaje = document.getElementById("mensaje");
-      var texto = "Boda: Carolina y Julian";
+      var texto = "C & J";
       var index = 0;
 
       function mostrarSiguienteLetra() {
@@ -245,7 +250,7 @@
         setTimeout(function() {
           tarjeta.style.opacity = "1"; // Hace visible la tarjeta gradualmente
         }, 100); // Retardo de 100 milisegundos
-      }, 3000); // 4000 milisegundos = 4 segundos
+      }, 1000); // 4000 milisegundos = 4 segundos
 
       // Inicia la animación del mensaje
       mostrarMensaje();
