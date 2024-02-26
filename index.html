@@ -60,14 +60,17 @@
 
     #boton-ubicacion{
       margin-top: 0px;
+      width: 70px; /* Ancho del botón */
+      height: 30px; /* Alto del botón */
+      font-size: 8px; /* Tamaño de la fuente del botón */
     }
 
-    #inicio{
+    /* #inicio{
       background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/CAROJULI.jpeg'); /* Fondo verde para toda la pantalla */
-    }
+    /* } */ 
 
     #asistencia{
-      background: linear-gradient(to bottom right, #f5e3e3, #f3c1c1);
+      background: linear-gradient(to bottom right, #e3f1f5, #c3d9f5);
       border-radius: 10px;
       padding: 20px;
     }
@@ -112,24 +115,66 @@
     .countdown-item {
         margin: 0 10px;
         font-size: 2em;
-        border-radius: 10px; /* Bordes redondeados */
-        background-color: #f06464; /* Color de fondo */
+        border-radius: 50%; /* Bordes redondeados */
+        background-color: #92c2ee; /* Color de fondo */
         box-shadow: 0 4px 8px rgba(39, 37, 37, 0.1); /* Sombra */
-        border: 2px solid #701f0a; /* Borde de otro color */
+        border: 2px solid #77b1f3; /* Borde de otro color */
         font-family: "Times New Roman", Times, serif;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
     }
 
+    .fecha{
+      display: flex;
+      justify-content: space-between; /* Alinea los elementos al principio y al final del contenedor */
+      width: 300px; /* Ancho del contenedor */
+      padding: 10px; /* Espaciado interno del contenedor */
+      border: 1px solid #000; /* Borde para visualizar el contenedor */
+    }
 
+    .separador {
+        border-right: 1px solid #000; /* Línea vertical divisoria */
+        margin-right: 10px; /* Espacio entre el separador y el texto */
+    }
 
+    .contenedor-padre {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dress-code{
+      padding: 0px;
+      width: 30%;
+      justify-content: center;
+    }
+
+    .logo-boda{
+      padding: -3px;
+      width: 30%;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
     <div id="fondo">
         <div id="bienvenida">
             <h1 id="mensaje"> </h1>
+            <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda">
         </div>
 
         <div id="tarjeta">
+          <img src="img/casamos.png" alt="casamos">
+                  <!-- Agrega la etiqueta audio para la música -->
+          <br>
+          <audio id="miAudio" controls loop>
+            <source src="media/cancion.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+
+          <h1>Estas invitado!</h1>
+          <h3>Queremos que seas parte de nuestra boda</h3>
           <div id="inicio">
             <h2> Dias para la boda: </h2>
             <div class="countdown">
@@ -139,36 +184,52 @@
               <div id="seconds" class="countdown-item"></div>
             </div>
           </div>
-            <h1> C & J</h1>
-            <img src="img/CAROJULI.jpeg" alt="Foto de los Novios">
-            <p>Fecha: 06 de diciembre 2025</p>
-            <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p>
-            <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano">
+            <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
+            <h1>Fecha</h1>
+            <h3>08 de febrero del 2025</h3>
+            <h1>Ceremonia</h1>
+            <div class="contenedor-padre">
+            <div class="fecha">
+              <p>La Purísima Concepción Envigado</p>
+              <p class="separador"></p>
+              <p>15:00</p>
+              <p class="separador"></p>
+              <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/La+Pur%C3%ADsima+Concepci%C3%B3n+Envigado/@6.1672578,-75.5636779,17z/data=!3m1!4b1!4m6!3m5!1s0x8e46836af80f7671:0xfa0f9dcaece25bd!8m2!3d6.1672525!4d-75.561103!16s%2Fg%2F11s0vmmzdh?hl=es&entry=ttu'">VER</button>
+            </div>
+          </div>
+            <!-- <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p> -->
+            <!-- <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano"> -->
             <br>
-            <h2>Lugar</h2>
-            <p>Palau</p>
-            <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">Ubicacion</button>
+            <h1>Recepción</h1>
+            <div class="contenedor-padre">
+              <div class="fecha">
+                <p>Villa de los angeles</p>
+                <p class="separador"></p>
+                <p>17:30</p>
+                <p class="separador"></p>
+                <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Hotel+Boutique+Villa+De+Los+Angeles/@6.1795488,-75.5523234,17z/data=!3m1!4b1!4m9!3m8!1s0x8e4682c26b2d56ad:0x5d6c5f316a2dc050!5m2!4m1!1i2!8m2!3d6.1795435!4d-75.5497485!16s%2Fg%2F11b6dqns1p?hl=es&entry=ttu'">VER</button>
+              </div>
+            </div>
+            <!-- <p>Palau calle 1 # 2</p> -->
+            <!-- <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button> -->
             <br>
             <h2>Dress code</h2>
-            <p>total white</p>
+            <img src="img/dress-code2.png" alt="casamos" class="dress-code">
+            <!-- <p>total white</p> -->
             <br>
             <div id="asistencia">
             <h2>Confirma tu asistencia aqui: </h2>
-            <button id="boton-ubicacion" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdaHO3hWA4I1mdtDlZlJkaoWlFa_Z-ChpNwqzK5elhEnzpuQA/viewform?usp=sf_link'">Confirmar asistencia</button>
+            <button id="boton-ubicacion" onclick="window.location.href='https://wa.me/+573218818944?text=hola%20quiero%20confirmar%20a%20Julian%20en%20boda'">Confirmar</button>
           </div>
         </div>
-        <!-- Agrega la etiqueta audio para la música -->
-        <audio id="miAudio" controls loop>
-          <source src="media/te_encontre.mp4" type="audio/mp4">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
+
     </div>
 
   <script>
     // Función para mostrar el mensaje letra por letra
     function mostrarMensaje() {
       var mensaje = document.getElementById("mensaje");
-      var texto = "Boda: Carolina y Julian";
+      var texto = "C & J";
       var index = 0;
 
       function mostrarSiguienteLetra() {
@@ -196,7 +257,7 @@
         setTimeout(function() {
           tarjeta.style.opacity = "1"; // Hace visible la tarjeta gradualmente
         }, 100); // Retardo de 100 milisegundos
-      }, 3000); // 4000 milisegundos = 4 segundos
+      }, 1000); // 4000 milisegundos = 4 segundos
 
       // Inicia la animación del mensaje
       mostrarMensaje();
@@ -204,7 +265,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
     // Establecer la fecha límite (puedes cambiarla a la fecha que desees)
-    const deadline = new Date('2025-05-03T06:00:00');
+    const deadline = new Date('2025-02-08T06:00:00');
 
     function updateCountdown() {
         const now = new Date();
