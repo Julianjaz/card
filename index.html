@@ -167,11 +167,14 @@
 
     .logo-boda {
       padding: -3px;
-      width: 50%; /* Usa un ancho del 100% para asegurarte de que la imagen no se desborde de su contenedor */
-      height: 50%; /* Usa 'auto' para mantener la proporción de la imagen */
+      width: 80%; /* Usa un ancho del 100% para asegurarte de que la imagen no se desborde de su contenedor */
+      height: 80%; /* Usa 'auto' para mantener la proporción de la imagen */
       justify-content: center;
     }
-
+    .frase {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
   </style>
 </head>
@@ -192,11 +195,16 @@
         </div>
 
         <div id="tarjeta">
+
+          <div class="contenedor">
+            <div class="frase" style="display: none;">Aqui empieza la frase que sera puesta y luego</div>
+            <div class="frase" style="display: none;">Estoy yo como segunda frase para aparecer despues</div>
+            <!-- Agrega más frases según sea necesario -->
+          </div>
+
           <img src="img/casamos.png" alt="casamos">
                   <!-- Agrega la etiqueta audio para la música -->
           <br>
-
-
           <h1>Estas invitado!</h1>
           <h3>Queremos que seas parte de nuestra boda</h3>
           <div id="inicio">
@@ -320,6 +328,24 @@
 
     // Llamar a la función para iniciar el proceso
     mostrarBienvenida();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var frases = document.querySelectorAll('.frase');
+
+      window.addEventListener('scroll', function() {
+        frases.forEach(function(frase, index) {
+          var bounding = frase.getBoundingClientRect();
+
+          // Verificar si la parte superior de la frase está dentro de la ventana gráfica
+          if (bounding.top >= 0 && bounding.top <= window.innerHeight) {
+            setTimeout(function() {
+              frase.style.display = 'block';
+            }, index * 7000); // Ajusta el retardo (en milisegundos) según sea necesario
+          }
+        });
+      });
+    });
+
 
   </script>
 </body>
