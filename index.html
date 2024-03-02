@@ -39,6 +39,21 @@
       transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
     }
 
+    #bienvenida_fija {
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px; /* Ajusta el margen según tus necesidades */
+      font-family: 'Dancing Script', cursive;
+      opacity: 0; /* Inicialmente oculto */
+      transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
+    }
+
     #tarjeta {
       text-align: center;
       padding: 20px;
@@ -115,7 +130,7 @@
     .countdown-item {
         margin: 0 10px;
         font-size: 2em;
-        border-radius: 50%; /* Bordes redondeados */
+        border-radius: 20%; /* Bordes redondeados */
         background-color: #92c2ee; /* Color de fondo */
         box-shadow: 0 4px 8px rgba(39, 37, 37, 0.1); /* Sombra */
         border: 2px solid #77b1f3; /* Borde de otro color */
@@ -150,28 +165,37 @@
       justify-content: center;
     }
 
-    .logo-boda{
+    .logo-boda {
       padding: -3px;
-      width: 30%;
+      width: 50%; /* Usa un ancho del 100% para asegurarte de que la imagen no se desborde de su contenedor */
+      height: 50%; /* Usa 'auto' para mantener la proporción de la imagen */
       justify-content: center;
     }
+
+
   </style>
 </head>
 <body>
     <div id="fondo">
+
         <div id="bienvenida">
             <h1 id="mensaje"> </h1>
-            <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda">
+            <!-- <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda"> -->
+        </div>
+
+        <div id="bienvenida_fija">
+          <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda">
+          <audio id="miAudio" controls loop>
+            <source src="media/cancion.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
         </div>
 
         <div id="tarjeta">
           <img src="img/casamos.png" alt="casamos">
                   <!-- Agrega la etiqueta audio para la música -->
           <br>
-          <audio id="miAudio" controls loop>
-            <source src="media/cancion.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-          </audio>
+
 
           <h1>Estas invitado!</h1>
           <h3>Queremos que seas parte de nuestra boda</h3>
@@ -229,7 +253,7 @@
     // Función para mostrar el mensaje letra por letra
     function mostrarMensaje() {
       var mensaje = document.getElementById("mensaje");
-      var texto = "C & J";
+      var texto = "Hoy empieza la mejor historia: La nuestra";
       var index = 0;
 
       function mostrarSiguienteLetra() {
@@ -257,7 +281,12 @@
         setTimeout(function() {
           tarjeta.style.opacity = "1"; // Hace visible la tarjeta gradualmente
         }, 100); // Retardo de 100 milisegundos
-      }, 1000); // 4000 milisegundos = 4 segundos
+
+        setTimeout(function() {
+          bienvenida_fija.style.opacity = "1"; // Hace visible la tarjeta gradualmente
+        }, 100); // Retardo de 100 milisegundos
+        
+      }, 5000); // 4000 milisegundos = 4 segundos
 
       // Inicia la animación del mensaje
       mostrarMensaje();
