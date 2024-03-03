@@ -84,6 +84,9 @@
       width: 60px; /* Ancho del botón */
       height: 30px; /* Alto del botón */
       font-size: 8px; /* Tamaño de la fuente del botón */
+      align-items: center;
+      justify-content:center;
+      text-align: center;
     }
 
 
@@ -109,18 +112,19 @@
     }
 
     button {
-      background-color: #63b0ee;
+      background-color: #800020;
       color: white;
-      padding: 10px 20px;
+
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
       margin-top: 20px;
+      text-align:center
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #e7aaaa;
     }
 
     .countdown {
@@ -252,6 +256,22 @@
       justify-content: center;
     }
 
+    #separadores {
+      font-size: 40px;
+      font-family: Arial;
+      font-weight: 1px;
+
+    }
+
+    #img-machete {
+      width: 8%;
+      height: auto;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 0;
+    }
   </style>
 </head>
 <body>
@@ -376,9 +396,13 @@
             <div class="contenedor-padre">
               <div class="fecha">
                 <p>Parroquia la Purísima Concepción</p>
-                <p class="separador"></p>
+                <!-- <p class="separador"></p> -->
+                <!-- <p id="separadores"> | </p> -->
+                <img src="img/machete.png" alt="" id="img-machete">
                 <p id="hora">15:00</p>
-                <p class="separador"></p>
+                <!-- <p id="separadores"> | </p> -->
+                <!-- <p class="separador"></p> -->
+                <img src="img/machete.png" alt="" id="img-machete">
                 <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/La+Pur%C3%ADsima+Concepci%C3%B3n+Envigado/@6.1672578,-75.5636779,17z/data=!3m1!4b1!4m6!3m5!1s0x8e46836af80f7671:0xfa0f9dcaece25bd!8m2!3d6.1672525!4d-75.561103!16s%2Fg%2F11s0vmmzdh?hl=es&entry=ttu'">VER</button>
               </div>
             </div>
@@ -389,9 +413,13 @@
             <div class="contenedor-padre">
               <div class="fecha">
                 <p>Hotel Boutique Villa de los Angeles</p>
-                <p class="separador"></p>
+                <!-- <p class="separador"></p> -->
+                <!-- <p id="separadores"> | </p> -->
+                <img src="img/machete.png" alt="" id="img-machete">
                 <p id="hora">17:30</p>
-                <p class="separador"></p>
+                <!-- <p id="separadores"> | </p> -->
+                <!-- <p class="separador"></p> -->
+                <img src="img/machete.png" alt="" id="img-machete">
                 <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Hotel+Boutique+Villa+De+Los+Angeles/@6.1795488,-75.5523234,17z/data=!3m1!4b1!4m9!3m8!1s0x8e4682c26b2d56ad:0x5d6c5f316a2dc050!5m2!4m1!1i2!8m2!3d6.1795435!4d-75.5497485!16s%2Fg%2F11b6dqns1p?hl=es&entry=ttu'">VER</button>
               </div>
             </div>
@@ -402,7 +430,7 @@
             <br>
             <div id="asistencia">
             <h2>Confirma tu asistencia aqui: </h2>
-            <button id="boton-ubicacion" onclick="window.location.href='https://wa.me/+573218818944?text=hola%20quiero%20confirmar%20a%20Julian%20en%20boda'">Confirmar</button>
+            <button id="boton-ubicacion" onclick="window.location.href='https://wa.me/+573218818944?text=hola%20quiero%20confirmar%20a%20Julian%20en%20boda'">CONFIRMAR</button>
           </div>
         </div>
 
