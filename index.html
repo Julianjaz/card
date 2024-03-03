@@ -228,6 +228,48 @@
       align-items: center; /* Centra los elementos horizontalmente */
     }
 
+    #counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+        }
+
+        .box-container {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 10px;
+        }
+
+        .box {
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.0rem;
+            background-color:#800020;
+            font-size:Arial;
+            color:white;
+            display: flex;
+            flex-direction: column; /* Alinea los elementos en columna */
+            align-items: center; /* Centra los elementos horizontalmente */
+        }
+
+        .box span {
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        #letra_count {
+          color:black;
+        }
+
   </style>
 </head>
 <body>
@@ -288,25 +330,68 @@
           
           <div id="inicio">
             <h2> Dias para la boda: </h2>
-            <div class="countdown">
-              <div class="temp_l">
+            <div class="countdown" style="display: none;">
+              <div class="temp_l" style="display: none;">
                 <div id="days" class="countdown-item"></div>
                 <div>Días</div>
               </div>
-              <div class="temp_l">
+              <div class="temp_l" style="display: none;">
                 <div id="hours" class="countdown-item"></div>
                 <div>Horas</div>
               </div>
-              <div class="temp_l">
+              <div class="temp_l" style="display: none;">
                 <div id="minutes" class="countdown-item"></div>
                 <div>Minutos</div>
               </div>
-              <div class="temp_l">
+              <div class="temp_l" style="display: none;">
                 <div id="seconds" class="countdown-item"></div>
                 <div>Segundos</div>
               </div>
             </div>
           </div>
+
+
+
+
+          <div id="counter">
+            <div class="box-container">
+                <div class="box">
+                    <span id="d1"></span>
+
+                </div>
+                <div class="box">
+                    <span id="d2"></span>
+                </div>
+                <div class="box">
+                    <span id="d3"></span>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <span id="h1"></span>
+                </div>
+                <div class="box">
+                    <span id="h2"></span>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <span id="m1"></span>
+                </div>
+                <div class="box">
+                    <span id="m2"></span>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <span id="s1"></span>
+                </div>
+                <div class="box">
+                    <span id="s2"></span>
+                </div>
+            </div>
+        </div>
+
 
 
           <img src="img/casamos.png" alt="casamos">
@@ -418,6 +503,21 @@
         document.getElementById('hours').innerHTML = hours;
         document.getElementById('minutes').innerHTML = minutes;
         document.getElementById('seconds').innerHTML = seconds;
+
+
+        document.getElementById('d1').innerText = Math.floor(days / 100).toString();
+        document.getElementById('d2').innerText = Math.floor((days % 100) / 10).toString();
+        document.getElementById('d3').innerText = Math.floor(days % 10).toString();
+
+        document.getElementById('h1').innerText = Math.floor(hours / 10).toString();
+        document.getElementById('h2').innerText = Math.floor(hours % 10).toString();
+
+        document.getElementById('m1').innerText = Math.floor(minutes / 10).toString();
+        document.getElementById('m2').innerText = Math.floor(minutes % 10).toString();
+
+        document.getElementById('s1').innerText = Math.floor(seconds / 10).toString();
+        document.getElementById('s2').innerText = Math.floor(seconds % 10).toString();
+
     }
 
         // Actualizar la cuenta regresiva cada segundo
