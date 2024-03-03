@@ -227,6 +227,12 @@
       flex-direction: column; /* Alinea los elementos en columna */
       align-items: center; /* Centra los elementos horizontalmente */
     }
+    .temp_text {
+      display: flex;
+      flex-direction: column; /* Alinea los elementos en columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+
+    }
 
     #counter {
             display: flex;
@@ -240,6 +246,7 @@
           align-items: center;
           justify-content: center;
           margin: 0 10px;
+
         }
 
         .box {
@@ -354,41 +361,55 @@
 
 
           <div id="counter">
-            <div class="box-container">
-                <div class="box">
-                    <span id="d1"></span>
+            <div class="temp_text">
+              <div class="box-container">
+                
+                  <div class="box">
+                      <span id="d1"></span>
 
-                </div>
-                <div class="box">
-                    <span id="d2"></span>
-                </div>
-                <div class="box">
-                    <span id="d3"></span>
-                </div>
+                  </div>
+                  <div class="box">
+                      <span id="d2"></span>
+                  </div>
+                  <div class="box">
+                      <span id="d3"></span>
+                  </div>
+                
+              </div>
+              <div>Días</div>
             </div>
-            <div class="box-container">
-                <div class="box">
-                    <span id="h1"></span>
-                </div>
-                <div class="box">
-                    <span id="h2"></span>
-                </div>
+            <div class="temp_text">
+              <div class="box-container">
+                  <div class="box">
+                      <span id="h1"></span>
+                  </div>
+                  <div class="box">
+                      <span id="h2"></span>
+                  </div>
+              </div>
+              <div>Horas</div>
             </div>
-            <div class="box-container">
-                <div class="box">
-                    <span id="m1"></span>
-                </div>
-                <div class="box">
-                    <span id="m2"></span>
-                </div>
+            <div class="temp_text">
+              <div class="box-container">
+                  <div class="box">
+                      <span id="m1"></span>
+                  </div>
+                  <div class="box">
+                      <span id="m2"></span>
+                  </div>
+              </div>
+              <div>Minutos</div>
             </div>
-            <div class="box-container">
-                <div class="box">
-                    <span id="s1"></span>
-                </div>
-                <div class="box">
-                    <span id="s2"></span>
-                </div>
+            <div class="temp_text">
+              <div class="box-container">
+                  <div class="box">
+                      <span id="s1"></span>
+                  </div>
+                  <div class="box">
+                      <span id="s2"></span>
+                  </div>
+              </div>
+              <div>Segundos</div>
             </div>
         </div>
 
