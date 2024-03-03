@@ -13,7 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/CAROJULI.jpeg'); /* Fondo verde para toda la pantalla */
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/fondo2.jpeg'); /* Fondo verde para toda la pantalla */
       transition: background 1s ease; /* Añade una transición suave al fondo */
     }
 
@@ -27,7 +27,7 @@
     #bienvenida {
       text-align: center;
       padding: 20px;
-      background-color: white;
+      background-color: #fff0f0;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -42,7 +42,7 @@
     #bienvenida_fija {
       text-align: center;
       padding: 20px;
-      background-color: white;
+      background-color: #fff0f0;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -56,12 +56,14 @@
       display: flex;
       flex-direction: column; /* Alinea los elementos en columna */
       align-items: center; /* Centra los elementos horizontalmente */
+      margin-bottom: 2px;
+      margin-top: 2px;
     }
 
     #tarjeta {
       text-align: center;
       padding: 20px;
-      background-color: #fff;
+      background-color: #fff0f0;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: none; /* Inicialmente oculto */
@@ -89,7 +91,7 @@
     /* } */ 
 
     #asistencia{
-      background: linear-gradient(to bottom right, #e3f1f5, #c3d9f5);
+      background: linear-gradient(to bottom right, #f5e6e3, #b64040);
       border-radius: 10px;
       padding: 20px;
     }
@@ -180,12 +182,6 @@
       margin-bottom: 20px;
     }
 
-    .contenedor_linea {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
 
     .linea-tiempo {
       position: absolute;
@@ -196,34 +192,6 @@
       background-color: #333;
       transform: translateY(-50%);
       
-    }
-
-    .evento {
-      text-align: center;
-      width: calc(100% / 3 - 20px); /* Ajustar según el número de eventos */
-      margin-bottom: 50px; /* Espacio entre eventos */
-      display: none; /* Ocultar eventos inicialmente */
-    }
-
-    .evento img {
-      width: 100%; /* Tamaño de las imágenes */
-      height: auto;
-      border-radius: 5px;
-    }
-
-    .evento h2 {
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-
-    .evento p {
-      margin-bottom: 0;
-    }
-
-    .evento img {
-      width: 55%; /* Tamaño de las imágenes */
-      height: auto;
-      border-radius: 5px;
     }
 
     .temp_l {
@@ -239,17 +207,17 @@
     }
 
     #counter {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 10vh;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
         }
 
         .box-container {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          margin: 0 10px;
+          margin: 0 6px;
 
         }
 
@@ -307,26 +275,7 @@
             <!-- Agrega más frases según sea necesario -->
           </div>
 
-        
-          <div class="contenedor_linea">
-            <div class="evento">
-              <img src="img/mano.jpeg" alt="Imagen 1" id="imagen_tiempo">
-              <h4>01/02/2023</h4>
-              <p>Promesa</p>
-            </div>
-            <div class="evento">
-              <img src="img/casamos.png" alt="Imagen 2">
-              <h4>01/02/2024</h4>
-              <p>Compromiso</p>
-            </div>
-            <div class="evento">
-              <img src="img/CAROJULI.jpeg" alt="Imagen 3">
-              <h4>08/02/2025</h4>
-              <p>Boda</p>
-            </div>
-            <!-- Agrega más eventos según sea necesario -->
-            <div class="linea-tiempo"></div> <!-- Línea de tiempo -->
-          </div>
+          <img src="img/linea.jpeg">
 
           <div class="contenedor2">
             <div class="frase2">
@@ -418,16 +367,7 @@
         </div>
 
 
-
-          <img src="img/casamos.png" alt="casamos">
-                  <!-- Agrega la etiqueta audio para la música -->
-          <br>
-          <h1>Estas invitado!</h1>
-          <h3>Queremos que seas parte de nuestra boda</h3>
-
-
-
-            <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
+          <h1>El gran dia</h1>
             <h1>Fecha</h1>
             <h3>08 de febrero del 2025</h3>
             <h1>Ceremonia</h1>
@@ -456,7 +396,7 @@
             <!-- <p>Palau calle 1 # 2</p> -->
             <!-- <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button> -->
             <br>
-            <h2>Dress code</h2>
+            <h2>Codigo de vestuario</h2>
             <img src="img/dress-code2.png" alt="casamos" class="dress-code">
             <!-- <p>total white</p> -->
             <br>
@@ -494,7 +434,7 @@
 
       bienvenida.style.opacity = "1"; // Hace visible la bienvenida
       setTimeout(function() {
-        bienvenida.style.opacity = "0"; // Oculta bienvenida después de 4 segundos
+        bienvenida.style.opacity = "1"; // Oculta bienvenida después de 4 segundos
         tarjeta.style.display = "block"; // Muestra tarjeta después de ocultar bienvenida
 
         setTimeout(function() {
