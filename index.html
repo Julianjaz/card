@@ -222,6 +222,12 @@
       border-radius: 5px;
     }
 
+    .temp_l {
+      display: flex;
+      flex-direction: column; /* Alinea los elementos en columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+    }
+
   </style>
 </head>
 <body>
@@ -269,7 +275,38 @@
             <div class="linea-tiempo"></div> <!-- Línea de tiempo -->
           </div>
 
+          <div class="contenedor2">
+            <div class="frase2">
+              <h3>Otra frase va despues</h3>
+            </div>
+            <div class="frase2">
+              <h3>Mas frase aqui que mi amor pone</h3>
+            </div>
+            <!-- Agrega más frases según sea necesario -->
+          </div>
 
+          
+          <div id="inicio">
+            <h2> Dias para la boda: </h2>
+            <div class="countdown">
+              <div class="temp_l">
+                <div id="days" class="countdown-item"></div>
+                <div>Días</div>
+              </div>
+              <div class="temp_l">
+                <div id="hours" class="countdown-item"></div>
+                <div>Horas</div>
+              </div>
+              <div class="temp_l">
+                <div id="minutes" class="countdown-item"></div>
+                <div>Minutos</div>
+              </div>
+              <div class="temp_l">
+                <div id="seconds" class="countdown-item"></div>
+                <div>Segundos</div>
+              </div>
+            </div>
+          </div>
 
 
           <img src="img/casamos.png" alt="casamos">
@@ -277,15 +314,7 @@
           <br>
           <h1>Estas invitado!</h1>
           <h3>Queremos que seas parte de nuestra boda</h3>
-          <div id="inicio">
-            <h2> Dias para la boda: </h2>
-            <div class="countdown">
-              <div id="days" class="countdown-item"></div>
-              <div id="hours" class="countdown-item"></div>
-              <div id="minutes" class="countdown-item"></div>
-              <div id="seconds" class="countdown-item"></div>
-            </div>
-          </div>
+
 
 
             <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
@@ -374,7 +403,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
     // Establecer la fecha límite (puedes cambiarla a la fecha que desees)
-    const deadline = new Date('2025-02-08T06:00:00');
+    const deadline = new Date('2025-02-08T15:00:00');
 
     function updateCountdown() {
         const now = new Date();
@@ -385,10 +414,10 @@
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-        document.getElementById('days').innerHTML = days + ' d';
-        document.getElementById('hours').innerHTML = hours + ' h';
-        document.getElementById('minutes').innerHTML = minutes + ' m';
-        document.getElementById('seconds').innerHTML = seconds + ' s';
+        document.getElementById('days').innerHTML = days;
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
     }
 
         // Actualizar la cuenta regresiva cada segundo
