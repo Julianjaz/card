@@ -81,14 +81,11 @@
 
     #boton-ubicacion{
       margin-top: 0px;
-      width: 70px; /* Ancho del botón */
+      width: 60px; /* Ancho del botón */
       height: 30px; /* Alto del botón */
       font-size: 8px; /* Tamaño de la fuente del botón */
     }
 
-    /* #inicio{
-      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/CAROJULI.jpeg'); /* Fondo verde para toda la pantalla */
-    /* } */ 
 
     #asistencia{
       background: linear-gradient(to bottom right, #f5e6e3, #b64040);
@@ -153,6 +150,7 @@
       width: 300px; /* Ancho del contenedor */
       padding: 10px; /* Espaciado interno del contenedor */
       border: 1px solid #000; /* Borde para visualizar el contenedor */
+      align-items: center; /* quitar para que aparez la raya */
     }
 
     .separador {
@@ -213,41 +211,46 @@
       height: 10vh;
         }
 
-        .box-container {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 6px;
+    .box-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 6px;
 
-        }
+    }
 
-        .box {
-            justify-content: center;
-            align-items: center;
-            width: 30px;
-            height: 30px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1.0rem;
-            background-color:#800020;
-            font-size: Georgia ;
-            color:white;
-            display: flex;
-            flex-direction: column; /* Alinea los elementos en columna */
-            align-items: center; /* Centra los elementos horizontalmente */
-        }
+    .box {
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1.0rem;
+        background-color:#800020;
+        font-size: Georgia ;
+        color:white;
+        display: flex;
+        flex-direction: column; /* Alinea los elementos en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
 
-        .box span {
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-        }
+    .box span {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
 
-        #letra_count {
-          color:black;
-        }
+    #letra_count {
+      color:black;
+    }
+
+    #hora {
+      align-items: center;
+      justify-content: center;
+    }
 
   </style>
 </head>
@@ -256,7 +259,6 @@
 
         <div id="bienvenida">
             <h1 id="mensaje"> </h1>
-            <!-- <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda"> -->
         </div>
 
         <div id="bienvenida_fija">
@@ -272,10 +274,9 @@
           <div class="contenedor">
             <div class="frase" style="display: none;">Aqui empieza la frase que sera puesta y luego</div>
             <div class="frase" style="display: none;">Estoy yo como segunda frase para aparecer despues</div>
-            <!-- Agrega más frases según sea necesario -->
           </div>
 
-          <img src="img/linea.jpeg">
+          <img src="img/linea6.jpeg">
 
           <div class="contenedor2">
             <div class="frase2">
@@ -284,10 +285,9 @@
             <div class="frase2">
               <h3>Mas frase aqui que mi amor pone</h3>
             </div>
-            <!-- Agrega más frases según sea necesario -->
           </div>
 
-          
+          <!-- hay un bug con esto y no se puede borrar -->
           <div id="inicio">
             <h2> Dias para la boda: </h2>
             <div class="countdown" style="display: none;">
@@ -309,10 +309,7 @@
               </div>
             </div>
           </div>
-
-
-
-
+           <!-- ____________________________________________ -->
           <div id="counter">
             <div class="temp_text">
               <div class="box-container">
@@ -368,37 +365,40 @@
 
 
           <h1>El gran dia</h1>
+            <img src="img/linea6.jpeg">
             <h1>Fecha</h1>
             <h3>08 de febrero del 2025</h3>
+            <h2>Mapa</h2>
+            <img src="img/linea6.jpeg">
+
+
             <h1>Ceremonia</h1>
             <div class="contenedor-padre">
-            <div class="fecha">
-              <p>La Purísima Concepción Envigado</p>
-              <p class="separador"></p>
-              <p>15:00</p>
-              <p class="separador"></p>
-              <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/La+Pur%C3%ADsima+Concepci%C3%B3n+Envigado/@6.1672578,-75.5636779,17z/data=!3m1!4b1!4m6!3m5!1s0x8e46836af80f7671:0xfa0f9dcaece25bd!8m2!3d6.1672525!4d-75.561103!16s%2Fg%2F11s0vmmzdh?hl=es&entry=ttu'">VER</button>
+              <div class="fecha">
+                <p>Parroquia la Purísima Concepción</p>
+                <p class="separador"></p>
+                <p id="hora">15:00</p>
+                <p class="separador"></p>
+                <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/La+Pur%C3%ADsima+Concepci%C3%B3n+Envigado/@6.1672578,-75.5636779,17z/data=!3m1!4b1!4m6!3m5!1s0x8e46836af80f7671:0xfa0f9dcaece25bd!8m2!3d6.1672525!4d-75.561103!16s%2Fg%2F11s0vmmzdh?hl=es&entry=ttu'">VER</button>
+              </div>
             </div>
-          </div>
-            <!-- <p>Mensaje bonito que usaremos para describir algo bonito, si esta leyendo esto perdiste tu tiempo porque es un mensaje dummy asi que chao.</p> -->
-            <!-- <img id="foto2" src="img/mano.jpeg" alt="Foto de la mano"> -->
+ 
+
             <br>
             <h1>Recepción</h1>
             <div class="contenedor-padre">
               <div class="fecha">
-                <p>Villa de los angeles</p>
+                <p>Hotel Boutique Villa de los Angeles</p>
                 <p class="separador"></p>
-                <p>17:30</p>
+                <p id="hora">17:30</p>
                 <p class="separador"></p>
                 <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Hotel+Boutique+Villa+De+Los+Angeles/@6.1795488,-75.5523234,17z/data=!3m1!4b1!4m9!3m8!1s0x8e4682c26b2d56ad:0x5d6c5f316a2dc050!5m2!4m1!1i2!8m2!3d6.1795435!4d-75.5497485!16s%2Fg%2F11b6dqns1p?hl=es&entry=ttu'">VER</button>
               </div>
             </div>
-            <!-- <p>Palau calle 1 # 2</p> -->
-            <!-- <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button> -->
+           
             <br>
             <h2>Codigo de vestuario</h2>
             <img src="img/dress-code2.png" alt="casamos" class="dress-code">
-            <!-- <p>total white</p> -->
             <br>
             <div id="asistencia">
             <h2>Confirma tu asistencia aqui: </h2>
