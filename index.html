@@ -13,7 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/CAROJULI.jpeg'); /* Fondo verde para toda la pantalla */
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/fondo2.jpeg'); /* Fondo verde para toda la pantalla */
       transition: background 1s ease; /* Añade una transición suave al fondo */
     }
 
@@ -27,7 +27,7 @@
     #bienvenida {
       text-align: center;
       padding: 20px;
-      background-color: white;
+      background-color: #fff0f0;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -39,10 +39,31 @@
       transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
     }
 
+    #bienvenida_fija {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff0f0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px; /* Ajusta el margen según tus necesidades */
+      font-family: 'Dancing Script', cursive;
+      opacity: 0; /* Inicialmente oculto */
+      transition: opacity 2s ease; /* Añade una transición suave a la opacidad */
+      justify-content: center;
+      display: flex;
+      flex-direction: column; /* Alinea los elementos en columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+
     #tarjeta {
       text-align: center;
       padding: 20px;
-      background-color: #fff;
+      background-color: #fff0f0;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: none; /* Inicialmente oculto */
@@ -70,7 +91,7 @@
     /* } */ 
 
     #asistencia{
-      background: linear-gradient(to bottom right, #e3f1f5, #c3d9f5);
+      background: linear-gradient(to bottom right, #f5e6e3, #b64040);
       border-radius: 10px;
       padding: 20px;
     }
@@ -115,7 +136,7 @@
     .countdown-item {
         margin: 0 10px;
         font-size: 2em;
-        border-radius: 50%; /* Bordes redondeados */
+        border-radius: 20%; /* Bordes redondeados */
         background-color: #92c2ee; /* Color de fondo */
         box-shadow: 0 4px 8px rgba(39, 37, 37, 0.1); /* Sombra */
         border: 2px solid #77b1f3; /* Borde de otro color */
@@ -150,41 +171,203 @@
       justify-content: center;
     }
 
-    .logo-boda{
+    .logo-boda {
       padding: -3px;
-      width: 30%;
+      width: 80%; /* Usa un ancho del 100% para asegurarte de que la imagen no se desborde de su contenedor */
+      height: 80%; /* Usa 'auto' para mantener la proporción de la imagen */
       justify-content: center;
     }
+    .frase {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+
+    .linea-tiempo {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #333;
+      transform: translateY(-50%);
+      
+    }
+
+    .temp_l {
+      display: flex;
+      flex-direction: column; /* Alinea los elementos en columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+    }
+    .temp_text {
+      display: flex;
+      flex-direction: column; /* Alinea los elementos en columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+
+    }
+
+    #counter {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+        }
+
+        .box-container {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 6px;
+
+        }
+
+        .box {
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.0rem;
+            background-color:#800020;
+            font-size:Arial;
+            color:white;
+            display: flex;
+            flex-direction: column; /* Alinea los elementos en columna */
+            align-items: center; /* Centra los elementos horizontalmente */
+        }
+
+        .box span {
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        #letra_count {
+          color:black;
+        }
+
   </style>
 </head>
 <body>
     <div id="fondo">
+
         <div id="bienvenida">
             <h1 id="mensaje"> </h1>
-            <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda">
+            <!-- <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda"> -->
         </div>
 
-        <div id="tarjeta">
-          <img src="img/casamos.png" alt="casamos">
-                  <!-- Agrega la etiqueta audio para la música -->
-          <br>
+        <div id="bienvenida_fija">
+          <img src="img/logo_boda.jpeg" alt="casamos" class="logo-boda">
           <audio id="miAudio" controls loop>
             <source src="media/cancion.mp3" type="audio/mp3">
             Tu navegador no soporta el elemento de audio.
           </audio>
+        </div>
 
-          <h1>Estas invitado!</h1>
-          <h3>Queremos que seas parte de nuestra boda</h3>
+        <div id="tarjeta">
+
+          <div class="contenedor">
+            <div class="frase" style="display: none;">Aqui empieza la frase que sera puesta y luego</div>
+            <div class="frase" style="display: none;">Estoy yo como segunda frase para aparecer despues</div>
+            <!-- Agrega más frases según sea necesario -->
+          </div>
+
+          <img src="img/linea.jpeg">
+
+          <div class="contenedor2">
+            <div class="frase2">
+              <h3>Otra frase va despues</h3>
+            </div>
+            <div class="frase2">
+              <h3>Mas frase aqui que mi amor pone</h3>
+            </div>
+            <!-- Agrega más frases según sea necesario -->
+          </div>
+
+          
           <div id="inicio">
             <h2> Dias para la boda: </h2>
-            <div class="countdown">
-              <div id="days" class="countdown-item"></div>
-              <div id="hours" class="countdown-item"></div>
-              <div id="minutes" class="countdown-item"></div>
-              <div id="seconds" class="countdown-item"></div>
+            <div class="countdown" style="display: none;">
+              <div class="temp_l" style="display: none;">
+                <div id="days" class="countdown-item"></div>
+                <div>Días</div>
+              </div>
+              <div class="temp_l" style="display: none;">
+                <div id="hours" class="countdown-item"></div>
+                <div>Horas</div>
+              </div>
+              <div class="temp_l" style="display: none;">
+                <div id="minutes" class="countdown-item"></div>
+                <div>Minutos</div>
+              </div>
+              <div class="temp_l" style="display: none;">
+                <div id="seconds" class="countdown-item"></div>
+                <div>Segundos</div>
+              </div>
             </div>
           </div>
-            <!-- <img src="img/CAROJULI.jpeg" alt="Foto de los Novios"> -->
+
+
+
+
+          <div id="counter">
+            <div class="temp_text">
+              <div class="box-container">
+                
+                  <div class="box">
+                      <span id="d1"></span>
+
+                  </div>
+                  <div class="box">
+                      <span id="d2"></span>
+                  </div>
+                  <div class="box">
+                      <span id="d3"></span>
+                  </div>
+                
+              </div>
+              <div>Días</div>
+            </div>
+            <div class="temp_text">
+              <div class="box-container">
+                  <div class="box">
+                      <span id="h1"></span>
+                  </div>
+                  <div class="box">
+                      <span id="h2"></span>
+                  </div>
+              </div>
+              <div>Horas</div>
+            </div>
+            <div class="temp_text">
+              <div class="box-container">
+                  <div class="box">
+                      <span id="m1"></span>
+                  </div>
+                  <div class="box">
+                      <span id="m2"></span>
+                  </div>
+              </div>
+              <div>Minutos</div>
+            </div>
+            <div class="temp_text">
+              <div class="box-container">
+                  <div class="box">
+                      <span id="s1"></span>
+                  </div>
+                  <div class="box">
+                      <span id="s2"></span>
+                  </div>
+              </div>
+              <div>Segundos</div>
+            </div>
+        </div>
+
+
+          <h1>El gran dia</h1>
             <h1>Fecha</h1>
             <h3>08 de febrero del 2025</h3>
             <h1>Ceremonia</h1>
@@ -213,7 +396,7 @@
             <!-- <p>Palau calle 1 # 2</p> -->
             <!-- <button id="boton-ubicacion" onclick="window.location.href='https://www.google.com/maps/place/Palau+-+Wink+Eventos/@6.151043,-75.5613834,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4683eecb62c44d:0x1be4dafa28110a6e!8m2!3d6.151043!4d-75.5613834!16s%2Fg%2F11gk9lv1nq?entry=ttu'">VER UBICACION</button> -->
             <br>
-            <h2>Dress code</h2>
+            <h2>Codigo de vestuario</h2>
             <img src="img/dress-code2.png" alt="casamos" class="dress-code">
             <!-- <p>total white</p> -->
             <br>
@@ -229,7 +412,7 @@
     // Función para mostrar el mensaje letra por letra
     function mostrarMensaje() {
       var mensaje = document.getElementById("mensaje");
-      var texto = "C & J";
+      var texto = "Hoy empieza la mejor historia: La nuestra";
       var index = 0;
 
       function mostrarSiguienteLetra() {
@@ -251,13 +434,18 @@
 
       bienvenida.style.opacity = "1"; // Hace visible la bienvenida
       setTimeout(function() {
-        bienvenida.style.opacity = "0"; // Oculta bienvenida después de 4 segundos
+        bienvenida.style.opacity = "1"; // Oculta bienvenida después de 4 segundos
         tarjeta.style.display = "block"; // Muestra tarjeta después de ocultar bienvenida
 
         setTimeout(function() {
           tarjeta.style.opacity = "1"; // Hace visible la tarjeta gradualmente
         }, 100); // Retardo de 100 milisegundos
-      }, 1000); // 4000 milisegundos = 4 segundos
+
+        setTimeout(function() {
+          bienvenida_fija.style.opacity = "1"; // Hace visible la tarjeta gradualmente
+        }, 100); // Retardo de 100 milisegundos
+        
+      }, 5000); // 4000 milisegundos = 4 segundos
 
       // Inicia la animación del mensaje
       mostrarMensaje();
@@ -265,7 +453,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
     // Establecer la fecha límite (puedes cambiarla a la fecha que desees)
-    const deadline = new Date('2025-02-08T06:00:00');
+    const deadline = new Date('2025-02-08T15:00:00');
 
     function updateCountdown() {
         const now = new Date();
@@ -276,10 +464,25 @@
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-        document.getElementById('days').innerHTML = days + ' d';
-        document.getElementById('hours').innerHTML = hours + ' h';
-        document.getElementById('minutes').innerHTML = minutes + ' m';
-        document.getElementById('seconds').innerHTML = seconds + ' s';
+        document.getElementById('days').innerHTML = days;
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
+
+
+        document.getElementById('d1').innerText = Math.floor(days / 100).toString();
+        document.getElementById('d2').innerText = Math.floor((days % 100) / 10).toString();
+        document.getElementById('d3').innerText = Math.floor(days % 10).toString();
+
+        document.getElementById('h1').innerText = Math.floor(hours / 10).toString();
+        document.getElementById('h2').innerText = Math.floor(hours % 10).toString();
+
+        document.getElementById('m1').innerText = Math.floor(minutes / 10).toString();
+        document.getElementById('m2').innerText = Math.floor(minutes % 10).toString();
+
+        document.getElementById('s1').innerText = Math.floor(seconds / 10).toString();
+        document.getElementById('s2').innerText = Math.floor(seconds % 10).toString();
+
     }
 
         // Actualizar la cuenta regresiva cada segundo
@@ -291,6 +494,46 @@
 
     // Llamar a la función para iniciar el proceso
     mostrarBienvenida();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var frases = document.querySelectorAll('.frase');
+
+      window.addEventListener('scroll', function() {
+        frases.forEach(function(frase, index) {
+          var bounding = frase.getBoundingClientRect();
+
+          // Verificar si la parte superior de la frase está dentro de la ventana gráfica
+          if (bounding.top >= 0 && bounding.top <= window.innerHeight) {
+            setTimeout(function() {
+              frase.style.display = 'block';
+            }, index * 7000); // Ajusta el retardo (en milisegundos) según sea necesario
+          }
+        });
+      });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var eventos = document.querySelectorAll('.evento');
+
+  window.addEventListener('scroll', function() {
+    eventos.forEach(function(evento, index) {
+      var bounding = evento.getBoundingClientRect();
+
+      // Verificar si el evento está dentro de la ventana gráfica
+      if (bounding.top >= 0 && bounding.top <= window.innerHeight) {
+        setTimeout(function() {
+          evento.style.display = 'block';
+        }, 8000 + index * 1500); // Retardo inicial de 8 segundos y 2 segundos entre cada evento
+      }
+    });
+  });
+
+  // Asegurarse de que los eventos visibles en la carga inicial se muestren
+  window.dispatchEvent(new Event('scroll'));
+});
+
 
   </script>
 </body>
